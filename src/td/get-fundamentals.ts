@@ -1,8 +1,9 @@
 import axios from "axios";
+import { TD_API_KEY } from "../constants";
 
 const GetFundamentals = (req: any, res: any) => {
   let symbol = req.query.symbol;
-  let url = `https://api.tdameritrade.com/v1/instruments?apikey=ROUWGIYAGOEXQCPASWX4IZTJFXG007RY&symbol=${symbol}&projection=fundamental`;
+  let url = `https://api.tdameritrade.com/v1/instruments?apikey=${TD_API_KEY}&symbol=${symbol}&projection=fundamental`;
   if (symbol.length > 0) {
     try {
       axios
@@ -21,4 +22,4 @@ const GetFundamentals = (req: any, res: any) => {
 
 module.exports = GetFundamentals;
 
-// https://api.tdameritrade.com/v1/instruments?apikey=ROUWGIYAGOEXQCPASWX4IZTJFXG007RY&symbol=bbig&projection=fundamental
+// https://api.tdameritrade.com/v1/instruments?apikey=${TD_API_KEY}&symbol=bbig&projection=fundamental

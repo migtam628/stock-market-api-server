@@ -1,8 +1,9 @@
 import axios from "axios";
+import { TD_API_KEY } from "../constants";
 
 const FindStock = (req: any, res: any) => {
   let symbol: any = req.query.symbol;
-  let url = `https://api.tdameritrade.com/v1/marketdata/${symbol}/quotes?apikey=ROUWGIYAGOEXQCPASWX4IZTJFXG007RY`;
+  let url = `https://api.tdameritrade.com/v1/marketdata/${symbol}/quotes?apikey=${TD_API_KEY}`;
   if (symbol?.length > 0) {
     //    try {
     axios

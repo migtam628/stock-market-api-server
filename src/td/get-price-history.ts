@@ -1,4 +1,5 @@
 import axios from "axios";
+import { TD_API_KEY } from "../constants";
 const GetPriceHistory = (req: any, res: any) => {
   let {
     symbol = "BBIG",
@@ -11,7 +12,7 @@ const GetPriceHistory = (req: any, res: any) => {
     needExtendedHoursData = true,
   }: IOptions = req.query;
 
-  let url = `https://api.tdameritrade.com/v1/marketdata/${symbol}/pricehistory?apikey=ROUWGIYAGOEXQCPASWX4IZTJFXG007RY&periodType=${periodType}&frequencyType=${frequencyType}${
+  let url = `https://api.tdameritrade.com/v1/marketdata/${symbol}/pricehistory?apikey=${TD_API_KEY}&periodType=${periodType}&frequencyType=${frequencyType}${
     start && end ? "" : "&period=" + period
   }${frequency ? "&frequency=" + frequency : ""}${
     end ? "&endDate=" + toTimestamp(end) *1000 : ""
