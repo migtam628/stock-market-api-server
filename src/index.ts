@@ -15,10 +15,10 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.get("/movers", require("./get-movers"));
-app.get("/stock", require("./find-stock"));
-app.get("/fundamentals", require("./get-fundamentals"));
-app.get("/prices", require("./get-price-history"));
+app.get("/movers", require("./td/get-movers"));
+app.get("/stock", require("./td/find-stock"));
+app.get("/fundamentals", require("./td/get-fundamentals"));
+app.get("/prices", require("./td/get-price-history"));
 
 app.listen(3000, () => {
   console.log("http://localhost:3000");
