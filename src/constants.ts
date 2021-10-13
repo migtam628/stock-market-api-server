@@ -1,3 +1,15 @@
+import { setListenToPort } from "./listen";
+import { setRoutes } from "./routes";
+import { setHeaders } from "./set-headers";
+import { initialize } from "./initialize";
+
+export {
+  initialize as CORS,
+  setHeaders as HEADERS,
+  setRoutes as ROUTES,
+  setListenToPort as LISTEN_TO_PORT,
+};
+
 export const TD_API_KEY = process.env.TD_API_KEY,
   FINTEL_API_KEY = process.env.FINTEL_API_KEY,
   FINNHUB_API_KEY = process.env.FINNHUB_API_KEY,
@@ -43,4 +55,5 @@ export const POLYGON_GET_NEWS_MODULE = require("./polygon/get-news"),
   POLYGON_GET_STOCK_SPLITS_MODULE = require("./polygon/get-stock-splits"),
   POLYGON_GET_MARKET_HOLIDAYS_MODULE = require("./polygon/get-market-holidays");
 
-export const HOME_MODULE = require("./home");
+import HOME_MODULE from "./home";
+export { HOME_MODULE };
