@@ -22,10 +22,10 @@ const GetMovers = (req: any, res: any) => {
       axios.get(url2).then((r) => r.data),
       axios.get(url3).then((r) => r.data),
     ]).then((data: Mover[][]) =>
-      res.send([...data[0], ...data[1], ...data[2]])
+      res.json([...data[0], ...data[1], ...data[2]])
     );
   } catch (error) {
-    res.send(error);
+    res.json(error);
   }
 };
 

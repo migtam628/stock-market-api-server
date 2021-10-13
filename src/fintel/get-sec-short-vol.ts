@@ -19,13 +19,13 @@ const getSecShortVol = (Req: any, Res: any) => {
         .request(options)
         .then((res) => res.data)
         .then((data) => {
-          Res.status(200).send(data);
+          Res.status(200).json(data);
         })
         .catch((err) => {
-          Res.status(400).send(err);
+          Res.status(400).json(err);
         });
     } catch (error) {
-      Res.send(error);
+      Res.json(error);
     }
   } else {
     Res.json({

@@ -9,13 +9,13 @@ const GetFundamentals = (req: any, res: any) => {
       axios
         .get(url)
         .then((response) => {
-          res.send(response.data);
+          res.json(response.data);
         })
         .catch((error) => {
-          res.send(error);
+          res.json(error);
         });
     } catch (error) {
-      res.send(error);
+      res.json(error);
     }
   }
 };

@@ -12,17 +12,17 @@ const GetCompanyDetails = async (req: any, res: any) => {
     axios
       .get(URL)
       .then((response: any) => {
-        res.status(200).send(response.data ? response.data : { response });
+        res.status(200).json(response.data ? response.data : { response });
       })
       .catch((error: any) => {
-        res.status(400).send({
+        res.status(400).json({
           status: "error",
           code: 429,
           message: "Please provide a valid symbol",
         });
       });
   } else {
-    res.status(400).send({
+    res.status(400).json({
       status: "error",
       code: 401,
       message: "No symbol provided",

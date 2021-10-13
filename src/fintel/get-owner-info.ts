@@ -13,24 +13,24 @@ const getOwnerInfo = (req: any, res: any) => {
     },
   };
   if (!symbol || !owner) {
-    res.status(401).send({ error: "symbol and owner are required" });
+    res.status(401).json({ error: "symbol and owner are required" });
   } else if (!country) {
-    res.status(401).send({ error: "country is required" });
+    res.status(401).json({ error: "country is required" });
   } else if (!symbol) {
-    res.status(401).send({ error: "symbol is required" });
+    res.status(401).json({ error: "symbol is required" });
   }
 
   try {
     axios
       .get(url, options)
       .then((response) => {
-        res.status(200).send(response.data);
+        res.status(200).json(response.data);
       })
       .catch((error) => {
         res.status(500).json({ error: error, status: 500, code: "error" });
       });
   } catch (error) {
-    res.status(500).send({ error: error.message });
+    res.status(500).json({ error: error.message });
   }
 };
 

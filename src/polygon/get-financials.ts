@@ -11,12 +11,12 @@ const getFinancials = async (req: any, res: any) => {
 
   const URL = `https://api.polygon.io/v2/reference/financials/${symbol}?limit=${limit}&apiKey=${POLYGON_API_KEY}`;
   if (!symbol) {
-    res.status(400).send({ error: "Symbol is required" });
+    res.status(400).json({ error: "Symbol is required" });
     return;
   }
 
   if (!limit) {
-    res.status(400).send({ error: "Limit is required" });
+    res.status(400).json({ error: "Limit is required" });
     return;
   }
 
@@ -24,13 +24,13 @@ const getFinancials = async (req: any, res: any) => {
     axios
       .get(URL)
       .then((response) => {
-        res.send(response.data);
+        res.json(response.data);
       })
       .catch((error) => {
-        res.send(error);
+        res.json(error);
       });
   } catch (error: any) {
-    res.status(500).send({ error: error.message });
+    res.status(500).json({ error: error.message });
   }
 };
 

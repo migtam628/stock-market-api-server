@@ -31,10 +31,10 @@ const getSecOwenership = (req: any, res: any) => {
   axios
     .get(urlpremium, options)
     .then((response: any) => {
-      res.send(response.data);
+      res.json(response.data);
     })
     .catch((error: any) => {
-      res.send(error);
+      res.json(error);
     });
 };
 
