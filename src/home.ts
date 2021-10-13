@@ -1,5 +1,5 @@
-const HOME = (req: any, res: any) => {
+const HOME_MODULE = (req: any, res: any) => {
     res.send('Hello World!');
 }
 
-module.exports = HOME;
+export default HOME_MODULE;
