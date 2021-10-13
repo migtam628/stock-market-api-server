@@ -1,13 +1,10 @@
 require("dotenv").config();
 import express from "express";
-import cors from "cors";
-import { setListenToPort } from "./listen";
-import { setRoutes } from "./routes";
-import { setHeaders } from "./set-headers";
+import { CORS, ROUTES, HEADERS, LISTEN_TO_PORT } from "./constants";
 
 const app = express();
-app.use(cors());
 
-setRoutes(app);
-setHeaders(app);
-setListenToPort(app);
+CORS(app);
+ROUTES(app);
+HEADERS(app);
+LISTEN_TO_PORT(app, process.env.PORT);
