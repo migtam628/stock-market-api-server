@@ -37,6 +37,7 @@ import {
 } from "./constants";
 
 export function setRoutes(app: any) {
+  
   app.get("/", HOME_MODULE);
 
   // TD FUNCTIONS
