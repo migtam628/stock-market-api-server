@@ -12,10 +12,10 @@ const GetPriceHistory = (req: any, res: any) => {
     needExtendedHoursData = true,
   }: IOptions = req.query;
 
-  let url = `https://api.tdameritrade.com/v1/marketdata/${symbol}/pricehistory?apikey=${TD_API_KEY}&periodType=${periodType}&frequencyType=${frequencyType}${
+  let url = `https://api.tdameritrade.com/v1/marketdata/${symbol?.toUpperCase()}/pricehistory?apikey=${TD_API_KEY}&periodType=${periodType}&frequencyType=${frequencyType}${
     start && end ? "" : "&period=" + period
   }${frequency ? "&frequency=" + frequency : ""}${
-    end ? "&endDate=" + toTimestamp(end) *1000 : ""
+    end ? "&endDate=" + toTimestamp(end) * 1000 : ""
   }${start ? "&startDate=" + toTimestamp(start) * 1000 : ""}${
     needExtendedHoursData
       ? "&needExtendedHoursData=" + needExtendedHoursData
@@ -23,8 +23,6 @@ const GetPriceHistory = (req: any, res: any) => {
   }`;
 
   try {
-    console.log(toTimestamp(start)*1000, toTimestamp(end)*1000);
-
     axios.get(url).then((response: any) => {
       let newRes = { candles: [], symbol: "", emty: true };
       let result = response.data.candles.map((stock: any) => {

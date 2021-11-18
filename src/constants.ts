@@ -1,14 +1,7 @@
-import { setListenToPort } from "./listen";
 import { setRoutes } from "./routes";
-import { setHeaders } from "./set-headers";
 import { initialize } from "./initialize";
 
-export {
-  initialize as CORS,
-  setHeaders as HEADERS,
-  setRoutes as ROUTES,
-  setListenToPort as LISTEN_TO_PORT,
-};
+export { initialize, setRoutes };
 
 export const TD_API_KEY = process.env.TD_API_KEY,
   FINTEL_API_KEY = process.env.FINTEL_API_KEY,
@@ -35,8 +28,8 @@ export const FINTEL_GET_SEC_OWNERSHIP_ROUTE = "/fintel-sec-ownership",
   FINTEL_GET_OWNER_INFO_ROUTE = "/fintel-owner-info",
   FINTEL_GET_STOCK_FILINGS_ROUTE = "/fintel-stock-filings";
 
-export const TD_GET_STOCK_MODULE = require("./td/find-stock"),
-  TD_GET_PRICE_HISTORY_MODULE = require("./td/get-price-history"),
+export const TD_GET_STOCK_MODULE = require("./td/get-stock"),
+  TD_GET_PRICE_HISTORY_MODULE = require("./td/get-prices"),
   TD_GET_MOVERS_MODULE = require("./td/get-movers"),
   TD_GET_FUNDAMENTALS_MODULE = require("./td/get-fundamentals");
 

@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
+import { FINTEL_API_KEY } from "../constants";
 
 const getOwnerInfo = (req: any, res: any) => {
   let symbol = req.query.symbol;
@@ -9,7 +10,7 @@ const getOwnerInfo = (req: any, res: any) => {
     method: "GET",
     headers: {
       Accept: "application/json",
-      "X-API-KEY": "sk_9fb3aee7b14f4e4c9117f2c6377059a7",
+      "X-API-KEY": FINTEL_API_KEY as any,
     },
   };
   if (!symbol || !owner) {
@@ -30,7 +31,7 @@ const getOwnerInfo = (req: any, res: any) => {
         res.status(500).json({ error: error, status: 500, code: "error" });
       });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: error, status: 500, code: "error" });
   }
 };
 

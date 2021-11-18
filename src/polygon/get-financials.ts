@@ -29,8 +29,8 @@ const getFinancials = async (req: any, res: any) => {
       .catch((error) => {
         res.json(error);
       });
-  } catch (error: any) {
-    res.status(500).json({ error: error.message });
+  } catch (error) {
+    res.status(500).json({ error: error });
   }
 };
 

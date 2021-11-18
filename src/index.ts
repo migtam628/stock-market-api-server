@@ -1,10 +1,14 @@
 require("dotenv").config();
+import * as functions from "firebase-functions";
 import express from "express";
-import { CORS, ROUTES, HEADERS, LISTEN_TO_PORT } from "./constants";
+import { setRoutes } from "./constants";
+import { initialize } from "./initialize";
 
 const app = express();
 
-CORS(app);
-ROUTES(app);
-HEADERS(app);
-LISTEN_TO_PORT(app, process.env.PORT);
+initialize(app);
+setRoutes(app);
+
+export const financialApi = functions.https.onRequest(app);
+// export const financialApiOnCall = functions.https.onCall((data, context) => {
+// });
