@@ -10,6 +10,7 @@ export function initialize(app: any) {
   app.set("Content-Type", "application/x-www-form-urlencoded");
   app.set("Content-Type", "application/json");
   app.set("Connection", "keep-alive");
+  app.set("X-Powered-By", "Express");
 
   app.use((req: any, res: any, next: any) => {
     res.header("Access-Control-Allow-Origin", "*");
