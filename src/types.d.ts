@@ -6,3 +6,10 @@ export interface Mover {
   symbol: string;
   totalVolume: number;
 }
+
+export interface IRoute {
+  path: string;
+  module: any;
+}
+
+export type IRoutes = IRoute[];
