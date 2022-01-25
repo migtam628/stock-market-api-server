@@ -3,7 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "tsc && node lib/index.js"
+    "build": "tsc",
+    "start:dev": "ts-node src/index.ts",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
   },
   "keywords": [],
   "main": "lib/index.js",
@@ -16,9 +22,11 @@
     "express": "^4.17.1",
     "firebase-admin": "^9.8.0",
     "firebase-functions": "^3.14.1",
+    "global": "^4.4.0",
     "mongoose": "^6.0.10",
     "node-fetch": "^3.0.0",
-    "nodemon": "^2.0.13"
+    "nodemon": "^2.0.13",
+    "ts-node": "^10.4.0"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
