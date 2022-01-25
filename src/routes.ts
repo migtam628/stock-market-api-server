@@ -3,6 +3,7 @@ import { IRoutes } from "./types";
 
 const Routes: IRoutes = [
   { path: "/", module: HOME_MODULE },
+  { path: "/finn-market-news", module: require("./finnhub/get-market-news") },
   { path: "/td-movers", module: require("./td/get-movers") },
   { path: "/td-stock", module: require("./td/find-stock") },
   { path: "/td-fundamentals", module: require("./td/get-fundamentals") },
