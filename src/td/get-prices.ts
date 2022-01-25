@@ -1,14 +1,42 @@
 import axios from "axios";
 import { TD_API_KEY } from "../constants";
+
+/**
+ * Returns the average of two numbers.
+ *
+ * @remarks This gets price history for a given symbol.
+ * @param {request} req - The request object.
+ * @param {response} res - The response object.
+ * @param {IOptions} req.query - The request object.
+ * @returns {void}
+ * 
+ * @example
+ * ```
+ * const { GetPriceHistory } = require("@tda-api/client");
+ * GetPriceHistory("AAPL");
+ * ```
+ * @example
+ * ```
+ * const app = require('express')()
+ * app.get("/api/price-history", require("PATH_TO/get-price-history"));
+ * app.listen(3000)
+ * ```
+ * 
+ * "http://localhost:3000/api/price-history?symbol=AAPL"
+ *  
+ *
+ * @beta
+ */
+
 const GetPriceHistory = (req: any, res: any) => {
   let {
     symbol = "BBIG",
-    frequencyType = "minute",
+    frequencyType = "daily",
     periodType = "day",
-    period = 1,
-    start = "10/05/2021, 7:00:00 AM",
-    end = "10/11/2021, 5:00:00 PM",
-    frequency = 1,
+    period = 60,
+    start = "09/05/2021",
+    end = "12/30/2021",
+    frequency = 5,
     needExtendedHoursData = true,
   }: IOptions = req.query;
 
@@ -60,4 +88,102 @@ interface IOptions {
   periodType: "year" | "month" | "day" | "ytd";
   frequencyType: "minute" | "daily" | "weekly" | "monthly";
   needExtendedHoursData: boolean;
+}
+
+let neww: IResponse = {
+  candles: [
+    {
+      open: 1.5,
+      high: 2.5,
+      low: 0.5,
+      close: 1.0,
+      volume: 100,
+      datetime: "2019-01-01T00:00:00.000Z",
+    },
+    {
+      open: 1.5,
+      high: 2.5,
+      low: 0.5,
+      close: 1.0,
+      volume: 100,
+      datetime: "2019-01-01T00:00:00.000Z",
+    },
+    {
+      open: 1.5,
+      high: 2.5,
+      low: 0.5,
+      close: 1.0,
+      volume: 100,
+      datetime: "2019-01-01T00:00:00.000Z",
+    },
+    {
+      open: 1.5,
+      high: 2.5,
+      low: 0.5,
+      close: 1.0,
+      volume: 100,
+      datetime: "2019-01-01T00:00:00.000Z",
+    },
+    {
+      open: 1.5,
+      high: 2.5,
+      low: 0.5,
+      close: 1.0,
+      volume: 100,
+      datetime: "2019-01-01T00:00:00.000Z",
+    },
+    {
+      open: 1.5,
+      high: 2.5,
+      low: 0.5,
+      close: 1.0,
+      volume: 100,
+      datetime: "2019-01-01T00:00:00.000Z",
+    },
+    {
+      open: 1.5,
+      high: 2.5,
+      low: 0.5,
+      close: 1.0,
+      volume: 100,
+      datetime: "2019-01-01T00:00:00.000Z",
+    },
+    {
+      open: 1.5,
+      high: 2.5,
+      low: 0.5,
+      close: 1.0,
+      volume: 100,
+      datetime: "2019-01-01T00:00:00.000Z",
+    },
+  ],
+  symbol: "BBIG",
+  empty: false,
+};
+
+function getMockReponse() {
+  return neww.candles.map((stock: any) => {
+    return {
+      open: stock.open,
+      high: stock.high,
+      low: stock.low,
+      close: stock.close,
+      volume: stock.volume,
+      datetime: toDateTime(stock.datetime),
+    };
+  });
+}
+
+// response:
+export interface IResponse {
+  candles: {
+    close: number;
+    datetime: string;
+    high: number;
+    low: number;
+    open: number;
+    volume: number;
+  }[];
+  empty?: boolean;
+  symbol?: string;
 }
