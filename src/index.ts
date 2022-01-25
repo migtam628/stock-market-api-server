@@ -10,8 +10,8 @@ initialize(app);
 Routes.map(({ path, module }: any) => {
   app.get(path, module);
 });
-setListenToPort(app, process.env.PORT);
+// setListenToPort(app, process.env.PORT);
 
-// export const financialApi = functions.https.onRequest(app);
+export const financialApi = functions.https.onRequest(app);
 // export const financialApiOnCall = functions.https.onCall((data, context) => {
 // });
