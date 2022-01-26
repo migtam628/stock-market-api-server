@@ -275,3 +275,17 @@ If you are renaming a function or changing its region, it is recommended that yo
 [debug] [2022-01-26T03:52:36.852Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 26 Jan 2022 03:52:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
 [debug] [2022-01-26T03:52:36.863Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/iwatchtv/locations/us-central1/functions:generateUploadUrl  
  
+[debug] [2022-01-26T03:52:37.489Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 26 Jan 2022 03:52:37 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-26T03:52:37.496Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-482650e4-9e81-4a00-bb4e-c8ba15c80792/9f348659-d92f-4f22-b4ab-adca6aaa32d5.zip?GoogleAccessId=service-262640023300@gcf-admin-robot.iam.gserviceaccount.com&Expires=1643170957&Signature=T2wpPu66GzgNId%2FZfeRvYZGgSfy9kBXG0zbjiyf0QnDZId1IRkTp6Jb9oFiDJQbWAy3KqERJXkJvimp7NuB2Mlgs%2FhPMjC8Dg2X%2FCTf2Lix%2FiUzof5hJcCA6%2BkVayTr3ISfesCjOlwcWpWyTj%2Boz5YIB3hkavB%2Fqzkki%2FLcIlHFEuF2PyFhbHKkX%2FjA%2BHB4%2Ba9YqhyIAt0s8jRPWWrrBUzv%2BK6IGV5E37LE2X7CxE7g%2FHmwntLUVCjIZjSycMLYwfx1GsxhjAVwc8tgV%2BZXE8km5iCkIFSrNvRQDjOg6Wqy19NfIQ5mn8d690ArlnIzhzKRzko7GXkwWS%2BLACxqg%2Bw%3D%3D  
+ <request body omitted>
+[debug] [2022-01-26T03:52:37.901Z] <<< HTTP RESPONSE 200 {"x-guploader-uploadid":"ADPycdtMl1gJ5cReet402Mo_61Oa7pLYIuJZlUvlBfkQ7Q2b8P4Vd770GLtISaO2Eo22x0xklfykFXcALu_uKbx07XkC3JRAHQ","etag":"\"b14b143da5522c2f8654bd1602285301\"","x-goog-generation":"1643169157860835","x-goog-metageneration":"1","x-goog-hash":"crc32c=7r+rUQ==, md5=sUsUPaVSLC+GVL0WAihTAQ==","x-goog-stored-content-length":"90428","x-goog-stored-content-encoding":"identity","vary":"Origin","content-length":"0","date":"Wed, 26 Jan 2022 03:52:37 GMT","server":"UploadServer","content-type":"text/html; charset=UTF-8","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\""}
+[info] ✔  functions: ./ folder uploaded successfully 
+[info] 
+The following functions are found in your project but do not exist in your local source code:
+	redis_api(us-central1)
+	stream(us-central1)
+	streaming(us-central1)
+	subtitle(us-central1)
+
+If you are renaming a function or changing its region, it is recommended that you create the new function first before deleting the old one to prevent event loss. For more info, visit https://firebase.google.com/docs/functions/manage-functions#modify
+
