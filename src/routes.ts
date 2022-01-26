@@ -4,6 +4,38 @@ import { IRoutes } from "./types";
 const Routes: IRoutes = [
   { path: "/", module: HOME_MODULE },
   { path: "/finn-market-news", module: require("./finnhub/get-market-news") },
+  {
+    path: "/finn-ipo-calendar",
+    module: require("./finnhub/get-ipo-calendar"),
+  },
+  { path: "/finn-earnings", module: require("./finnhub/get-earnings") },
+  {
+    path: "/finn-stock-metrics",
+    module: require("./finnhub/get-stock-metrics"),
+  },
+  {
+    path: "/finn-sec-filings",
+    module: require("./finnhub/get-sec-filings"),
+  },
+  { path: "/finn-stock-news", module: require("./finnhub/get-stock-news") },
+  { path: "/finn-similar", module: require("./finnhub/get-similar") },
+  {
+    path: "/finn-stock-profile",
+    module: require("./finnhub/get-stock-profile"),
+  },
+  {
+    path: "/finn-search",
+    module: require("./finnhub/get-search"),
+  },
+  { path: "/tiingo-market-news", module: require("./tiingo/get-market-news") },
+  {
+    path: "/tiingo-daily-prices",
+    module: require("./tiingo/get-daily-prices"),
+  },
+  {
+    path: "/tiingo-crypto-prices",
+    module: require("./tiingo/get-crypto-prices"),
+  },
   { path: "/td-movers", module: require("./td/get-movers") },
   { path: "/td-stock", module: require("./td/find-stock") },
   { path: "/td-fundamentals", module: require("./td/get-fundamentals") },
@@ -95,9 +127,9 @@ const Routes: IRoutes = [
     module: require("./fmp/get-historical-chart"),
   },
   {
-    path: '/fmp-crypto-chart',
-    module: require('./fmp/get-crypto-chart')
-  }
+    path: "/fmp-crypto-chart",
+    module: require("./fmp/get-crypto-chart"),
+  },
 ];
 
 export default Routes;
