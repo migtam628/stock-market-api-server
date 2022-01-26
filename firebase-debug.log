@@ -272,3 +272,6 @@ If you are renaming a function or changing its region, it is recommended that yo
 [info] i  functions: packaged ./ (88.31 KB) for uploading 
 [debug] [2022-01-26T03:52:36.304Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/iwatchtv/locations/-/functions  
  
+[debug] [2022-01-26T03:52:36.852Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Wed, 26 Jan 2022 03:52:36 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-01-26T03:52:36.863Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/iwatchtv/locations/us-central1/functions:generateUploadUrl  
+ 
