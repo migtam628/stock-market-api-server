@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from "axios";
 
 const getFilings = (req: any, res: any) => {
-  let symbol = req.query.symbol;
+  let symbol = req.query.symbol || "AAPL";
   let country = req.query.country || "us";
   const url = `https://api.fintel.io/web/v/0.0/sf/${country}/${symbol}`;
   const options: AxiosRequestConfig = {
@@ -12,29 +12,21 @@ const getFilings = (req: any, res: any) => {
     },
   };
 
-  if (symbol.length > 0) {
-    try {
-      axios
-        .get(url, options)
-        .then((response) => {
-          res.json(response.data);
-        })
-        .catch((error) => {
-          res.json(error);
-        });
-    } catch (error) {
-      res.status(500).json({
-        status: "error",
-        code: 500,
-        message: "Something went wrong",
-        error: error,
+  try {
+    axios
+      .get(url, options)
+      .then((response) => {
+        res.json(response.data);
+      })
+      .catch((error) => {
+        res.json(error);
       });
-    }
-  } else {
-    res.status(400).json({
+  } catch (error) {
+    res.status(500).json({
       status: "error",
-      code: 400,
-      message: "Please provide a symbol",
+      code: 500,
+      message: "Something went wrong",
+      error: error,
     });
   }
 };
