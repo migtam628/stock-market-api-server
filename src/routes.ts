@@ -1,8 +1,17 @@
 import HOME_MODULE from "./home";
-import { IRoutes } from "./types";
+import { getAllFilings } from "./sec-api/get-all-filings";
+import { getSearchFilings } from "./sec-api/get-search-filings";
 
 const Routes: IRoutes = [
   { path: "/", module: HOME_MODULE },
+  {
+    path: "/sec-api-all-filings",
+    module: getAllFilings,
+  },
+  {
+    path: "/sec-api-get-search-filings",
+    module: getSearchFilings,
+  },
   { path: "/finn-market-news", module: require("./finnhub/get-market-news") },
   {
     path: "/finn-ipo-calendar",
