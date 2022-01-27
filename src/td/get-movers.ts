@@ -1,4 +1,3 @@
-import { Mover } from "./../types.d";
 import axios from "axios";
 import { TD_API_KEY } from "../constants";
 
