@@ -14,7 +14,6 @@ const GetMarketNews = (req: any, res: any) => {
   let tickers: string | undefined | null = symbols && "&tickers=" + symbols;
   let url = `https://api.tiingo.com/tiingo/news?token=${TIINGO_API_KEY}${tickers ? tickers : ""}`;
 
-  console.log({ symbols, tickers });
 
   try {
     axios
