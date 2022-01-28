@@ -46,9 +46,9 @@ const Routes: IRoutes = [
     module: require("./tiingo/get-crypto-prices"),
   },
   { path: "/td-movers", module: require("./td/get-movers") },
-  { path: "/td-stock", module: require("./td/find-stock") },
+  { path: "/td-stock", module: require("./td/get-stock") },
   { path: "/td-fundamentals", module: require("./td/get-fundamentals") },
-  { path: "/td-prices", module: require("./td/get-price-history") },
+  { path: "/td-prices", module: require("./td/get-prices") },
   { path: "/poly-news", module: require("./polygon/get-news") },
   {
     path: "/poly-company-details",
