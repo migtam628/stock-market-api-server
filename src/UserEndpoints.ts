@@ -2,6 +2,12 @@ export const URL =
   "https://us-central1-iwatchtv.cloudfunctions.net/financialApi";
 
 export const Endpoints: TEndpoints = {
+  secApiFilings: {
+    name: "secApiFilings",
+    path: "/sec-api-all-filings",
+    example:
+      "https://us-central1-iwatchtv.cloudfunctions.net/financialApi/sec-api-all-filings?symbol=AAPL",
+  },
   finnEarnings: {
     name: "finn-earnings",
     path: "/finn-earnings",
