@@ -1,7 +1,10 @@
 {
   "functions": {
+    "runtime": "nodejs16",
     "source": "./",
-    "runtime": "nodejs14",
+    "engines": {
+      "node": "16.0.0"
+    },
     "predeploy": "npm --prefix \"$RESOURCE_DIR\" run build"
   }
 }
