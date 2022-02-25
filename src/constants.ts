@@ -10,4 +10,4 @@ export const TD_API_KEY = process.env.TD_API_KEY,
   FIN_MOD_PREP_API_KEY = process.env.FIN_MOD_PREP_API_KEY,
   TIINGO_API_KEY = process.env.TIINGO_API_KEY,
   SEC_API_KEY = process.env.SEC_API_KEY,
-  PORT = process.env.PORT;
+  _PORT = process.env._PORT;
