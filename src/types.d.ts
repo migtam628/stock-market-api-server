@@ -29,6 +29,7 @@ interface IEndpoints {
 enum EndpointChoices {
   secApiFilings = "secApiFilings",
   finnMarketNews = "finnMarketNews",
+  finnCandles = "finnCandles",
   finnIpoCalendar = "finnIpoCalendar",
   finnEarnings = "finnEarnings",
   finnStockMetrics = "finnStockMetrics",
