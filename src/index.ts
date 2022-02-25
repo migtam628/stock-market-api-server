@@ -3,9 +3,6 @@ import * as functions from "firebase-functions";
 import express from "express";
 import { initialize, setListenToPort } from "./constants";
 import Routes from "./routes";
-// import createSockerIO from "./socketio";
-import uuid from "uuid";
-import { streamAllFilings } from "./sec-api/stream-all-filings";
 
 const app = express();
 
@@ -14,10 +11,7 @@ Routes.map(({ path, module }: any) => {
   app.get(path, module);
 });
 
-
-// setListenToPort(app, process.env.PORT);
-
+// setListenToPort(app, process.env._PORT);
 
 export const financialApi = functions.https.onRequest(app);
-// export const financialApiOnCall = functions.https.onCall((data, context) => {
-// });
+  
