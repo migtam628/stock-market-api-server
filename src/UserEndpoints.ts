@@ -14,6 +14,12 @@ export const Endpoints: TEndpoints = {
     example:
       "https://us-central1-iwatchtv.cloudfunctions.net/financialApi/finn-earnings?symbol=AAPL",
   },
+  finnCandles: {
+    name: "finn-candles",
+    path: "/finn-candles",
+    example:
+      "https://us-central1-iwatchtv.cloudfunctions.net/financialApi/finn-candles?symbol=AAPL&startDate=2022-01-01&endDate=2022-02-25",
+  },
   finnNews: {
     name: "finn-market-news",
     path: "/finn-market-news",
