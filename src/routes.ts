@@ -13,6 +13,7 @@ const Routes: IRoutes = [
     module: getSearchFilings,
   },
   { path: "/finn-market-news", module: require("./finnhub/get-market-news") },
+  { path: "/finn-candles", module: require("./finnhub/get-candles") },
   {
     path: "/finn-ipo-calendar",
     module: require("./finnhub/get-ipo-calendar"),
